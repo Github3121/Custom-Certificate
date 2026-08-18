@@ -22,7 +22,7 @@ function App() {
   const dateFor = new Date(date);
 
   const day = dateFor.getDate();
-  const month = dateFor.toLocaleString("en-US", { month: "long" }); // "August"
+  const month = dateFor.toLocaleString("en-US", { month: "long" });
   const years = dateFor.getFullYear();
 
   const customFormat = `${day} ${month}, ${years}`;
