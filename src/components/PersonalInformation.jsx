@@ -1,4 +1,4 @@
-export default function PersonalInfoForm({ studentName, setStudentName, studentName2, setStudentName2, fatherName, setFatherName, motherName, setMotherName, collegeName, setCollegeName, groupName, setGroupName, districtName, setDistrictName, GPA, setGPA, roll, setRoll, reg, setReg, year, setYear, date, setDate, serial, setSerial, dbchc, setDBCHC }) {
+export default function PersonalInfoForm({ studentName, setStudentName, birthYear, setBirthYear, fatherName, setFatherName, motherName, setMotherName, collegeName, setCollegeName, groupName, setGroupName, districtName, setDistrictName, GPA, setGPA, roll, setRoll, reg, setReg, year, setYear, setDate, serial, setSerial, dbchc, setDBCHC, storyear }) {
 
     return (
         <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4 sm:p-6 lg:p-8 rounded-2xl">
@@ -15,34 +15,37 @@ export default function PersonalInfoForm({ studentName, setStudentName, studentN
                             <input value={studentName} onChange={(e) => setStudentName(e.target.value)} type="text" placeholder="Md. Rahat" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">S. Last Name</label>
-                            <input value={studentName2} onChange={(e) => setStudentName2(e.target.value)} type="text" placeholder="Chowdhury" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Father Name</label>
                             <input value={fatherName} onChange={(e) => setFatherName(e.target.value)} type="text" placeholder="Md. Jabed Hossain" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Mother Name</label>
                             <input value={motherName} onChange={(e) => setMotherName(e.target.value)} type="text" placeholder="Roja Begum" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">College Name</label>
-                            <input value={collegeName} onChange={(e) => setCollegeName(e.target.value)} type="text" placeholder="Govt. Science College" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">Group Name</label>
-                            <input value={groupName} onChange={(e) => setGroupName(e.target.value)} type="text" placeholder="'Science', 'Business', 'Humanity'" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input value={collegeName} onChange={(e) => setCollegeName(e.target.value)} list="browsers" type="text" placeholder="Govt. Science College" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <datalist id="browsers">
+                                <option value="Dhaka State College"></option>
+                                <option value="Dhaka College"></option>
+                            </datalist>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Group Name</label>
+                            <input value={groupName} onChange={(e) => setGroupName(e.target.value)} list="groups" type="text" placeholder="Choose Anyone" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <datalist id="groups">
+                                <option value="Science"></option>
+                                <option value="Business Studies"></option>
+                                <option value="Arts"></option>
+                            </datalist>
+                        </div>
+                        <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">District Name</label>
-                            <select defaultValue={districtName} onChange={(e) => setDistrictName(e.target.value)} className="select w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800">
+                            <select defaultValue={districtName} onChange={(e) => setDistrictName(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800">
                                 <option disabled={true}>Pick a District</option>
                                 <option value="Dhaka">Dhaka</option>
                                 <option value="Faridpur">Faridpur</option>
@@ -59,15 +62,31 @@ export default function PersonalInfoForm({ studentName, setStudentName, studentN
                                 <option value="Tangail">Tangail</option>
                             </select>
                         </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">GPA</label>
                             <input value={GPA} onChange={(e) => setGPA(e.target.value)} type="text" placeholder="4.50" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Birth Year</label>
+                            <input value={birthYear} onChange={(e) => setBirthYear(e.target.value)} type="text" placeholder="2000" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                        </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">Reg. No /Session Year</label>
-                            <input value={reg} onChange={(e) => setReg(e.target.value)} type="text" placeholder="1410698888 /2017-18" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Birth to Exam Year Duration</label>
+                            <input value={year} onChange={(e) => setYear(e.target.value)} type="number" placeholder="19" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Results Publish Date</label>
+                            <input value={storyear} onChange={(e) => setDate(e.target.value)} type="date" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" disabled />
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label className="block text-sm font-medium text-slate-700 mb-2">Reg. No</label>
+                            <input value={reg} onChange={(e) => setReg(e.target.value)} type="text" placeholder="10 disits" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Roll No</label>
@@ -76,22 +95,12 @@ export default function PersonalInfoForm({ studentName, setStudentName, studentN
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">Date</label>
-                            <input value={date} onChange={(e) => setDate(e.target.value)} type="date" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">Exam Year</label>
-                            <input value={year} onChange={(e) => setYear(e.target.value)} type="text" placeholder="2019" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Serial No.</label>
-                            <input value={serial} onChange={(e) => setSerial(e.target.value)} type="text" placeholder="1526483" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" />
+                            <input value={serial} onChange={(e) => setSerial(e.target.value)} type="text" placeholder="7 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" />
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">DBCHC</label>
-                            <input value={dbchc} onChange={(e) => setDBCHC(e.target.value)} type="text" placeholder="25453678" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input value={dbchc} onChange={(e) => setDBCHC(e.target.value)} type="text" placeholder="8 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
                     </div>
                 </div>
