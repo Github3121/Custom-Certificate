@@ -64,16 +64,13 @@ function App() {
 
   return (
     <>
-      <div className='flex flex-col justify-center items-center w-full min-h-screen bg-gray-300 p-5'>
-        <div className='w-full border-b-2 border-gray-400 flex justify-center items-center rounded-2xl bg-white shadow mb-5'>
-          <h1 className='text-5xl font-bold uppercase tinos-bold mx-auto my-5 animate-pulse'>Custom Certificate</h1>
-        </div>
-        <div className='w-full rounded-2xl bg-white pb-5'>
+      <div className='flex flex-col justify-center items-center w-full min-h-screen p-5'>
+        <div className='flex gap-5 flex-col w-full rounded-2xl pb-5'>
           <div>
             <PersonalInfoForm studentName={studentName} setStudentName={setStudentName} birthYear={birthYear} setBirthYear={setBirthYear} fatherName={fatherName} setFatherName={setFatherName} motherName={motherName} setMotherName={setMotherName} collegeName={collegeName} setCollegeName={setCollegeName} groupName={groupName} setGroupName={setGroupName} districtName={districtName} setDistrictName={setDistrictName} GPA={GPA} setGPA={setGPA} roll={roll} setRoll={setRoll} reg={reg} setReg={setReg} year={year} setYear={setYear} date={date} storyear={storyear} setDate={setDate} serial={serial} setSerial={setSerial} dbchc={dbchc} setDBCHC={setDBCHC} />
           </div>
-          <div className='overflow-x-scroll my-5'>
-            <div id="certificate-print" className='relative bg-white shadow mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
+          <div className='overflow-x-scroll bg-slate-100 py-5 rounded-2xl'>
+            <div id="certificate-print" className='relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
               <p className='absolute tinos-bold font-bold text-[20px] scale-y-[1] top-[183px] left-[267px] pl-1 tracking-[0.4px] custom-shadow'>{dbchc.length === 0 ? '11245869' : dbchc}</p>

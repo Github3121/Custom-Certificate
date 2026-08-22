@@ -90,7 +90,7 @@ export default function PersonalInfoForm({ studentName, setStudentName, birthYea
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Roll No</label>
-                            <input value={roll} onChange={(e) => setRoll(e.target.value)} type="text" placeholder="19 35 96" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input value={roll} onChange={(e) => setRoll(e.target.value)} type="text" placeholder="193596" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

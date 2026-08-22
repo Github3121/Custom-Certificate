@@ -29,3 +29,15 @@
     font-style: italic;
     color: #010000;
 }
+
+/* Chrome, Safari, Edge, Opera-এর জন্য */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox-এর জন্য */
+input[type=number] {
+    -moz-appearance: textfield;
+}
