@@ -1,7 +1,9 @@
+import { CircleX } from "lucide-react";
+
 export default function PersonalInfoForm({ studentName, setStudentName, birthYear, setBirthYear, fatherName, setFatherName, motherName, setMotherName, collegeName, setCollegeName, groupName, setGroupName, districtName, setDistrictName, GPA, setGPA, roll, setRoll, reg, setReg, year, setYear, setDate, serial, setSerial, dbchc, setDBCHC, storyear }) {
 
     return (
-        <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4 sm:p-6 lg:p-8 rounded-2xl">
+        <div className="min-h-screen bg-[#f1f5f92f] backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 lg:p-8 rounded-2xl">
             <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6 text-white">
                     <h2 className="text-2xl font-bold tracking-wide">Certificate Information</h2>
@@ -10,19 +12,22 @@ export default function PersonalInfoForm({ studentName, setStudentName, birthYea
 
                 <div className="p-8 space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">S. First Name</label>
-                            <input value={studentName} onChange={(e) => setStudentName(e.target.value)} type="text" placeholder="Md. Rahat" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="name" value={studentName} onChange={(e) => setStudentName(e.target.value)} type="text" placeholder="Md. Rahat" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("name").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Father Name</label>
-                            <input value={fatherName} onChange={(e) => setFatherName(e.target.value)} type="text" placeholder="Md. Jabed Hossain" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="father" value={fatherName} onChange={(e) => setFatherName(e.target.value)} type="text" placeholder="Md. Jabed Hossain" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("father").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Mother Name</label>
-                            <input value={motherName} onChange={(e) => setMotherName(e.target.value)} type="text" placeholder="Roja Begum" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="mother" value={motherName} onChange={(e) => setMotherName(e.target.value)} type="text" placeholder="Roja Begum" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("mother").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">College Name</label>
@@ -64,43 +69,50 @@ export default function PersonalInfoForm({ studentName, setStudentName, birthYea
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">GPA</label>
-                            <input value={GPA} onChange={(e) => setGPA(e.target.value)} type="text" placeholder="4.50" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="gpa" value={GPA} onChange={(e) => setGPA(e.target.value)} type="text" placeholder="4.50" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("gpa").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Birth Year</label>
-                            <input value={birthYear} onChange={(e) => setBirthYear(e.target.value)} type="text" placeholder="2000" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="birth" value={birthYear} maxLength={4} onChange={(e) => setBirthYear(e.target.value)} type="text" placeholder="2000" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("birth").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Birth to Exam Year Duration</label>
-                            <input value={year} onChange={(e) => setYear(e.target.value)} type="number" placeholder="19" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="year" value={year} maxLength={3} onChange={(e) => setYear(e.target.value)} type="number" placeholder="19" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("year").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 mb-2">Results Publish Date</label>
-                            <input value={storyear} onChange={(e) => setDate(e.target.value)} type="date" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" disabled />
+                            <input tabIndex={-1} value={storyear} onChange={(e) => setDate(e.target.value)} type="date" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" disabled />
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Reg. No</label>
-                            <input value={reg} onChange={(e) => setReg(e.target.value)} type="text" placeholder="10 disits" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="reg" value={reg} maxLength={10} onChange={(e) => setReg(e.target.value)} type="text" placeholder="10 disits" required className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("reg").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Roll No</label>
-                            <input value={roll} onChange={(e) => setRoll(e.target.value)} type="text" placeholder="193596" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="roll" value={roll} maxLength={6} onChange={(e) => setRoll(e.target.value)} type="text" placeholder="193596" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("roll").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">Serial No.</label>
-                            <input value={serial} onChange={(e) => setSerial(e.target.value)} type="text" placeholder="7 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" />
+                            <input id="sl" value={serial} maxLength={7} onChange={(e) => setSerial(e.target.value)} type="text" placeholder="7 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("sl").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
-                        <div>
+                        <div className="relative">
                             <label className="block text-sm font-medium text-slate-700 mb-2">DBCHC</label>
-                            <input value={dbchc} onChange={(e) => setDBCHC(e.target.value)} type="text" placeholder="8 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <input id="dbchc" value={dbchc} maxLength={8} onChange={(e) => setDBCHC(e.target.value)} type="text" placeholder="8 disits" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-slate-800 placeholder-slate-400" />
+                            <button tabIndex={-1} onClick={() => document.getElementById("dbchc").value = ''} className="absolute left-65 top-[39px] bg-gray-300 p-1 rounded-full hover:bg-gray-700 hover:text-white cursor-pointer"><CircleX size={16} /></button>
                         </div>
                     </div>
                 </div>

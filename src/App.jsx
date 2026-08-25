@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css'
 import PersonalInfoForm from './components/PersonalInformation';
+import { ChevronsUp } from 'lucide-react';
 
 function App() {
-
   const [studentName, setStudentName] = useState('');
   const [fatherName, setFatherName] = useState('');
   const [motherName, setMotherName] = useState('');
@@ -22,7 +22,7 @@ function App() {
   const countHSC = Number(birthYear) + Number(year);
   const registatin = countHSC - 2;
   const nextYear = registatin + 1;
-  
+
   const finalresnear = `${registatin}-${nextYear.toString().slice(-2)}`;
 
   const autoPickDate = {
@@ -62,15 +62,47 @@ function App() {
 
   const customFormat = `${day} ${month}, ${years}`;
 
+  useEffect(() => {
+    const topBtn = document.getElementById("scrollTopBtn");
+
+    // Safety check: element ache kina nishchit hon
+    if (topBtn) {
+      const handleClick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+      topBtn.addEventListener("click", handleClick);
+
+      // Cleanup function
+      return () => topBtn.removeEventListener("click", handleClick);
+    }
+  }, []);
+
   return (
-    <>
-      <div className='flex flex-col justify-center items-center w-full min-h-screen p-5'>
+    // Main relative container to anchor the video overlay
+    <div className='relative w-full min-h-screen overflow-hidden'>
+      <div className='relative z-10 flex flex-col justify-center items-center w-full min-h-screen p-5'>
         <div className='flex gap-5 flex-col w-full rounded-2xl pb-5'>
           <div>
-            <PersonalInfoForm studentName={studentName} setStudentName={setStudentName} birthYear={birthYear} setBirthYear={setBirthYear} fatherName={fatherName} setFatherName={setFatherName} motherName={motherName} setMotherName={setMotherName} collegeName={collegeName} setCollegeName={setCollegeName} groupName={groupName} setGroupName={setGroupName} districtName={districtName} setDistrictName={setDistrictName} GPA={GPA} setGPA={setGPA} roll={roll} setRoll={setRoll} reg={reg} setReg={setReg} year={year} setYear={setYear} date={date} storyear={storyear} setDate={setDate} serial={serial} setSerial={setSerial} dbchc={dbchc} setDBCHC={setDBCHC} />
+            <PersonalInfoForm
+              studentName={studentName} setStudentName={setStudentName}
+              birthYear={birthYear} setBirthYear={setBirthYear}
+              fatherName={fatherName} setFatherName={setFatherName}
+              motherName={motherName} setMotherName={setMotherName}
+              collegeName={collegeName} setCollegeName={setCollegeName}
+              groupName={groupName} setGroupName={setGroupName}
+              districtName={districtName} setDistrictName={setDistrictName}
+              GPA={GPA} setGPA={setGPA}
+              roll={roll} setRoll={setRoll}
+              reg={reg} setReg={setReg}
+              year={year} setYear={setYear}
+              date={date} storyear={storyear} setDate={setDate}
+              serial={serial} setSerial={setSerial}
+              dbchc={dbchc} setDBCHC={setDBCHC}
+            />
           </div>
-          <div className='overflow-x-scroll bg-slate-100 py-5 rounded-2xl'>
-            <div id="certificate-print" className='relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
+          <div className='overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl'>
+            <div tabIndex={0} id="certificate-print" className='relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
               <p className='absolute tinos-bold font-bold text-[20px] scale-y-[1] top-[183px] left-[267px] pl-1 tracking-[0.4px] custom-shadow'>{dbchc.length === 0 ? '11245869' : dbchc}</p>
@@ -94,9 +126,10 @@ function App() {
               Install Extension & Save Certificate
             </a>
           </div>
+          <button className="fixed bottom-[20px] right-[20px] p-[10px] rounded-full text-[16px] bg-[#007bff] text-white border-none rounded-[5px] cursor-pointer hover:bg-[#0056b3]" id="scrollTopBtn"><ChevronsUp /></button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
