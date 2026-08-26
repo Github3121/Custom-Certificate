@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect,  useState } from 'react';
 import './App.css'
 import PersonalInfoForm from './components/PersonalInformation';
 import { ChevronsUp } from 'lucide-react';
@@ -47,7 +47,7 @@ function App() {
     2019: "2019-07-17",
     2020: "2019-07-17",
     2021: "2021-01-30",
-    2022: "2021-01-30",
+    2022: "2022-05-30",
     2023: "2023-11-26",
     2024: "2024-10-15",
     2025: "2025-10-16",
@@ -78,9 +78,17 @@ function App() {
     }
   }, []);
 
+  const condi = () => {
+    if (studentName && fatherName && motherName && collegeName && groupName && districtName && GPA && (roll.length == 6) && (birthYear.length == 4) && (reg.length == 10) && year && (serial.length == 7) && (dbchc.length == 8)) {
+      return 'block';
+    } else {
+      return 'hidden';
+    }
+  }
+
   return (
     // Main relative container to anchor the video overlay
-    <div className='relative w-full min-h-screen overflow-hidden'>
+    <div className='relative w-full min-h-screen bg-transparent overflow-hidden'>
       <div className='relative z-10 flex flex-col justify-center items-center w-full min-h-screen p-5'>
         <div className='flex gap-5 flex-col w-full rounded-2xl pb-5'>
           <div>
@@ -101,7 +109,7 @@ function App() {
               dbchc={dbchc} setDBCHC={setDBCHC}
             />
           </div>
-          <div className='overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl'>
+          <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl formTable ${condi()}`}>
             <div tabIndex={0} id="certificate-print" className='relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
