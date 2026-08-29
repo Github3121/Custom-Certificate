@@ -109,7 +109,7 @@ function App() {
               dbchc={dbchc} setDBCHC={setDBCHC}
             />
           </div>
-          <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl formTable ${condi()}`}>
+          <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm active:bg-white py-5 rounded-2xl formTable ${condi()}`}>
             <div tabIndex={0} id="certificate-print" className={`relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set ${condi()}`}>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
