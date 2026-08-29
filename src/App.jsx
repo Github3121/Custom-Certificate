@@ -109,21 +109,23 @@ function App() {
               dbchc={dbchc} setDBCHC={setDBCHC}
             />
           </div>
-          <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm active:bg-white py-5 rounded-2xl formTable ${condi()}`}>
-            <div tabIndex={0} id="certificate-print" className={`relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set ${condi()}`}>
-              <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
-              <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
-              <p className='absolute tinos-bold font-bold text-[20px] scale-y-[1] top-[183px] left-[267px] pl-1 tracking-[0.4px] custom-shadow'>{dbchc.length === 0 ? '11245869' : dbchc}</p>
-              <p className='absolute tinos-bold font-bold text-[24px] scale-y-[1.2] top-55 left-213 pl-1 tracking-[0.5px]'>{countHSC.length === 0 ? '2015' : countHSC}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-74 left-96.5 pl-2'>{studentName.length === 0 ? 'Md. Joyhanul Islam' : studentName}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-88.5 left-80 pl-2'>{fatherName.length === 0 ? 'Md. Jalal Uddin' : fatherName}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-101 left-39.5 pl-2'>{motherName.length === 0 ? 'Mst. Rabeya Sultana' : motherName}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-114 left-34.5 pl-2'>{collegeName.length === 0 ? 'Dhaka College' : collegeName}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-129.5 left-32.5 w-153 pl-2 text-center'>{districtName.length === 0 ? 'Dhaka' : districtName}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-129 left-155 w-80 pl-2 text-center'>{roll.length === 0 ? '15 42 36' : roll.replace(/(.{2})/g, '$1 ').trim()}</p>
-              <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.1] top-143 left-145 w-93.5 pl-2 text-center'>{groupName.length === 0 ? 'Business Studies' : groupName}</p>
-              <p className='absolute tinos-bold-italic text-[23px] scale-y-[1.1] top-157 left-42.5 w-18 pl-2 text-center'>{GPA.length === 0 ? '4.00' : GPA}</p>
-              <p className='absolute tinos-bold-italic text-[19px] top-187 left-88 pl-2 text-center font-bold'>{customFormat === 'NaN Invalid Date, NaN' ? '7 August, 2026' : customFormat}.</p>
+          <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl formTable ${condi()}`}>
+            <div className="bg-white">
+              <div tabIndex={0} id="certificate-print" className={`relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set ${condi()}`}>
+                <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
+                <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
+                <p className='absolute tinos-bold font-bold text-[20px] scale-y-[1] top-[183px] left-[267px] pl-1 tracking-[0.4px] custom-shadow'>{dbchc.length === 0 ? '11245869' : dbchc}</p>
+                <p className='absolute tinos-bold font-bold text-[24px] scale-y-[1.2] top-55 left-213 pl-1 tracking-[0.5px]'>{countHSC.length === 0 ? '2015' : countHSC}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-74 left-96.5 pl-2'>{studentName.length === 0 ? 'Md. Joyhanul Islam' : studentName}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-88.5 left-80 pl-2'>{fatherName.length === 0 ? 'Md. Jalal Uddin' : fatherName}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-101 left-39.5 pl-2'>{motherName.length === 0 ? 'Mst. Rabeya Sultana' : motherName}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-114 left-34.5 pl-2'>{collegeName.length === 0 ? 'Dhaka College' : collegeName}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-129.5 left-32.5 w-153 pl-2 text-center'>{districtName.length === 0 ? 'Dhaka' : districtName}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.2] top-129 left-155 w-80 pl-2 text-center'>{roll.length === 0 ? '15 42 36' : roll.replace(/(.{2})/g, '$1 ').trim()}</p>
+                <p className='absolute tinos-bold-italic text-[25px] scale-y-[1.1] top-143 left-145 w-93.5 pl-2 text-center'>{groupName.length === 0 ? 'Business Studies' : groupName}</p>
+                <p className='absolute tinos-bold-italic text-[23px] scale-y-[1.1] top-157 left-42.5 w-18 pl-2 text-center'>{GPA.length === 0 ? '4.00' : GPA}</p>
+                <p className='absolute tinos-bold-italic text-[19px] top-187 left-88 pl-2 text-center font-bold'>{customFormat === 'NaN Invalid Date, NaN' ? '7 August, 2026' : customFormat}.</p>
+              </div>
             </div>
           </div>
           <div className="pt-4 flex justify-center items-center">
