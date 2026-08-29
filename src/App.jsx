@@ -79,7 +79,7 @@ function App() {
   }, []);
 
   const condi = () => {
-    if (studentName && fatherName && motherName && collegeName && groupName && districtName && GPA && (roll.length == 6) && (birthYear.length == 4) && (reg.length == 10) && year && (serial.length == 7) && (dbchc.length == 8)) {
+    if ((!!(studentName) && !!(fatherName) && !!(motherName) && !!(collegeName) && !!(groupName) && !!(GPA) && !!(roll.length == 6) && !!(birthYear) && !!(reg.length == 10) && !!(year) && !!(serial.length == 7) && !!(dbchc.length == 8))) {
       return 'block';
     } else {
       return 'hidden';
@@ -110,7 +110,7 @@ function App() {
             />
           </div>
           <div className={`overflow-x-scroll bg-[#f1f5f92f] backdrop-blur-sm py-5 rounded-2xl formTable ${condi()}`}>
-            <div tabIndex={0} id="certificate-print" className='relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set'>
+            <div tabIndex={0} id="certificate-print" className={`relative bg-white mx-auto flex justify-center items-center blurry-text h-210 w-297 bg-set ${condi()}`}>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] underline underline-offset-2 top-35.5 left-212 pl-1'>{reg.length === 0 ? '1411589565 /2014-16' : `${reg} /${finalresnear}`}</p>
               <p className='absolute tinos-bold-italic font-bold text-[24px] scale-y-[1.2] top-34 left-75 pl-1 tracking-[0.5px] custom-shadow'>{serial.length === 0 ? '1245783' : serial}</p>
               <p className='absolute tinos-bold font-bold text-[20px] scale-y-[1] top-[183px] left-[267px] pl-1 tracking-[0.4px] custom-shadow'>{dbchc.length === 0 ? '11245869' : dbchc}</p>
